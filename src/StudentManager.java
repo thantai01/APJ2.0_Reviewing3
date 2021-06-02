@@ -1,4 +1,5 @@
 
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class StudentManager implements Manager<Student>{
@@ -79,11 +80,9 @@ public class StudentManager implements Manager<Student>{
     }
 
 //    public void findByAgeRange(int age) {
-//        for(Student student:studentList) {
-//            if(student.getAge())
-//        }
+//
 //    }
-    public void sortByIDIncrease(String ID) {
+    public void sortByID() {
         Collections.sort(studentList, new Comparator<Student>() {
             @Override
             public int compare(Student o1, Student o2) {
@@ -94,10 +93,10 @@ public class StudentManager implements Manager<Student>{
         for(Student student:studentList) {
             sortByID.add(student);
         }
-        System.out.println("#Your result: " + sortByID);
+        this.studentList = sortByID;
     }
 
-    public void sortByName(String name) {
+    public void sortByName() {
         Collections.sort(studentList, new Comparator<Student>() {
             @Override
             public int compare(Student o1, Student o2) {
@@ -108,8 +107,22 @@ public class StudentManager implements Manager<Student>{
         for(Student student: studentList) {
             sortByName.add(student);
         }
-        System.out.println("#Your result: " + sortByName);
+        this.studentList = sortByName;
     }
+
+//    public void sortByAge() {
+//        Collections.sort(studentList, new Comparator<Student>() {
+//            @Override
+//            public int compare(Student o1, Student o2) {
+//                return o1.getAge(o1.getStudentDOB().format(DateTimeFormatter.ofPattern("yyyy")))-o2.getAge(o2.getStudentDOB().format(DateTimeFormatter.ofPattern("yyyy")));
+//            }
+//        });
+//        List<Student> sortByAge = new ArrayList<>();
+//        for(Student student:studentList) {
+//            sortByAge.add(student);
+//        }
+//
+//    }
 
 
 }

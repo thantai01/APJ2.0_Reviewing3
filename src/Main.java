@@ -11,6 +11,9 @@ public class Main {
         studentManager.add(st2);
         studentManager.add(st3);
         studentManager.print();
+        studentManager.sortByName();
+//        Menu.newStudent();
+
 
     }
 }
