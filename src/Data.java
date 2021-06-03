@@ -21,11 +21,11 @@ public class Data {
                     + student.getGender(student.getStudentGender()) + ","
                     + student.getStudentAddress() + ","
                     + student.getStudentEmail() + ","
-                    + student.getStudentAvgScore() + ","
+                    + student.getStudentAvgScore()
                     + NEW_LINE_SEPARATOR
             );
         }
-        System.out.println("Data has written to CSV file");
+        System.out.println("Data has written to CSV file" + path);
         fw.flush();
         bfw.close();
         fw.close();

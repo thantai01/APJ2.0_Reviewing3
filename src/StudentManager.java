@@ -73,8 +73,6 @@ public class StudentManager implements Manager<Student>{
         for(Student student:studentList) {
             if(student.getStudentAvgScore()>=min && student.getStudentAvgScore()<=max) {
                 System.out.println(student + "\n");
-            } else if (student.getStudentAvgScore()<min || student.getStudentAvgScore()>max){
-                System.out.println("No result");
             }
         }
     }
@@ -84,8 +82,6 @@ public class StudentManager implements Manager<Student>{
             if(student.getAge(student.getStudentDOB().format(DateTimeFormatter.ofPattern("dd-MM-yyyy")))<max
                     && student.getAge(student.getStudentDOB().format(DateTimeFormatter.ofPattern("dd-MM-yyyy")))>min){
                 System.out.println(student +"\n");
-            } else {
-                System.out.println("Out of range!");
             }
         }
     }

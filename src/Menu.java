@@ -11,7 +11,7 @@ public class Menu {
         System.out.println("# Action : ");
         System.out.println("1. Add new Student: ");
         System.out.println("2. Display Student List: ");
-        System.out.println("3. Edit Student: ");
+        System.out.println("3. Edit Student (By ID): ");
         System.out.println("4. Delete Student (By ID): ");
         System.out.println("5. Find Student: ");
         System.out.println("6. Sort Student List: ");
@@ -30,17 +30,14 @@ public class Menu {
         String name = sc.nextLine();
         System.out.print("Date of birth (dd-MM-yyyy): ");
         String dob = sc.nextLine();
-        sc.nextLine();
         System.out.print("Student Gender : (0.Male, 1.Female) ");
         int gender = sc.nextInt();
         sc.nextLine();
         System.out.print("Student Address : ");
         String address = sc.nextLine();
-        sc.nextLine();
         System.out.print("Student Email: ");
         String email = sc.nextLine();
-        sc.nextLine();
-        System.out.println("Student Average Score");
+        System.out.print("Student Average Score: ");
         double avg =sc.nextDouble();
         studentManager.add(new Student(id,name,dob,gender,address,email,avg));
     }
@@ -59,8 +56,7 @@ public class Menu {
         String address = sc.nextLine();
         System.out.print("New Student email: ");
         String email = sc.nextLine();
-        sc.nextLine();
-        System.out.println("New Student Avg Score: ");
+        System.out.print("New Student Avg Score: ");
         double avg = sc.nextDouble();
         return new Student(id,name,dob,gender,address,email,avg) ;
     }
@@ -89,6 +85,7 @@ public class Menu {
                 break;
             case 3:
                 System.out.println("Enter Student Address: ");
+                sc.nextLine();
                 String address = sc.nextLine();
                 System.out.println("#Result: ");
                 studentManager.findByAddress(address);

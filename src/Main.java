@@ -23,7 +23,7 @@ public class Main {
         for(Student student: studentManager.studentList) {
             count+=1;
         }
-        System.out.println("Have " + count + "students in list");
+        System.out.println("Have [" + count + "] students in list");
     }
 
     static void programProcess(StudentManager studentManager) throws Exception {
@@ -55,10 +55,10 @@ public class Main {
                     break;
                 case 4:
                     System.out.println("Enter Student ID:");
-                    String deleteID = sc.nextLine();
                     sc.nextLine();
-                    System.out.println("ALERT: Do you want to delete this student?? ");
-                    System.out.println("1. YES - 2. NO ");
+                    String deleteID = sc.nextLine();
+                    System.out.print("ALERT: Do you want to delete this student?? ");
+                    System.out.print("1. YES - 2. NO ");
                     int choose = sc.nextInt();
                     switch (choose) {
                         case 1:
@@ -81,8 +81,8 @@ public class Main {
                     System.out.println("----------------------------------");
                     break;
                 case 7:
-                    sc.nextLine();
                     System.out.println("Enter destination file: ");
+                    sc.nextLine();
                     String destination = sc.nextLine();
                     Data.writeDataFile(destination, studentManager.studentList);
                     System.out.println("Your data has been saved");
@@ -91,6 +91,7 @@ public class Main {
                     sc.nextLine();
                     System.out.println("Enter path of data file: ");
                     String fromPath = sc.nextLine();
+                    studentManager.studentList.clear();
                     studentManager.studentList = Data.readDataFile(fromPath);
                     System.out.println("Your list has been updated");
                     break;
