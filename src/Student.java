@@ -80,6 +80,7 @@ public class Student {
     public void setStudentAvgScore(double studentAvgScore) {
         this.studentAvgScore = studentAvgScore;
     }
+
     public String getGender(int studentGender){
         String gender = "";
         if(studentGender==0) {

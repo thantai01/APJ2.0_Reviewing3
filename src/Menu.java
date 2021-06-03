@@ -45,13 +45,6 @@ public class Menu {
         studentManager.add(new Student(id,name,dob,gender,address,email,avg));
     }
 
-    static void deleteByID(StudentManager studentManager) {
-        System.out.print("Enter a product ID want to delete: ");
-        Scanner sc = new Scanner(System.in);
-        String id = sc.nextLine();
-        studentManager.delete(id);
-    }
-
     static Student newStudent (String id) {
         System.out.println("Update Student Information :");
         Scanner sc = new Scanner(System.in);
@@ -110,9 +103,14 @@ public class Menu {
                 System.out.println("#Result: ");
                 studentManager.findByAvgScore(min,max);
                 break;
-//            case 5:
-//                System.out.println();
-//                break;
+            case 5:
+                System.out.println("Enter min of Age: ");
+                int minAge = sc.nextInt();
+                System.out.println("Enter max of Age: ");
+                int maxAge = sc.nextInt();
+                System.out.println("#Result ");
+                studentManager.findByAgeRange(minAge,maxAge);
+                break;
             default:
                 System.out.println("Invalid");;
         }
@@ -128,13 +126,28 @@ public class Menu {
         switch (select) {
             case 1:
                 studentManager.sortByID();
+                System.out.println("#New List after sort: ");
                 studentManager.print();
+                System.out.println("-----------------------");
                 break;
             case 2:
                 studentManager.sortByName();
+                System.out.println("#New List after sort: ");
                 studentManager.print();
+                System.out.println("-----------------------");
                 break;
             case 3:
+                studentManager.sortByAge();
+                System.out.println("#New List after sort: ");
+                studentManager.print();
+                System.out.println("-----------------------");
+                break;
+            case 4:
+                studentManager.sortByAvgScore();
+                System.out.println("#New List after sort: ");
+                studentManager.print();
+                System.out.println("-----------------------");
+                break;
 
         }
     }

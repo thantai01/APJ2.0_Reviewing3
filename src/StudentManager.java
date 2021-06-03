@@ -79,11 +79,17 @@ public class StudentManager implements Manager<Student>{
         }
     }
 
-    public void findByAgeRange(int age) {
+    public void findByAgeRange(int min, int max) {
         for(Student student: studentList) {
-
+            if(student.getAge(student.getStudentDOB().format(DateTimeFormatter.ofPattern("dd-MM-yyyy")))<max
+                    && student.getAge(student.getStudentDOB().format(DateTimeFormatter.ofPattern("dd-MM-yyyy")))>min){
+                System.out.println(student +"\n");
+            } else {
+                System.out.println("Out of range!");
+            }
         }
     }
+
     public void sortByID() {
         Collections.sort(studentList, new Comparator<Student>() {
             @Override
@@ -112,19 +118,34 @@ public class StudentManager implements Manager<Student>{
         this.studentList = sortByName;
     }
 
-//    public void sortByAge() {
-//        Collections.sort(studentList, new Comparator<Student>() {
-//            @Override
-//            public int compare(Student o1, Student o2) {
-//                return o1.getAge(o1.getStudentDOB().format(DateTimeFormatter.ofPattern("yyyy")))-o2.getAge(o2.getStudentDOB().format(DateTimeFormatter.ofPattern("yyyy")));
-//            }
-//        });
-//        List<Student> sortByAge = new ArrayList<>();
-//        for(Student student:studentList) {
-//            sortByAge.add(student);
-//        }
-//
-//    }
+    public void sortByAge() {
+        Collections.sort(studentList, new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                return o1.getAge(o1.getStudentDOB().format(DateTimeFormatter.ofPattern("yyyy")))-o2.getAge(o2.getStudentDOB().format(DateTimeFormatter.ofPattern("yyyy")));
+            }
+        });
+        List<Student> sortByAge = new ArrayList<>();
+        for(Student student:studentList) {
+            sortByAge.add(student);
+        }
+        this.studentList = sortByAge;
+
+    }
+
+    public void sortByAvgScore() {
+        Collections.sort(studentList, new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                return (int)(o1.getStudentAvgScore()-o2.getStudentAvgScore());
+            }
+        });
+        List<Student> sortByAvgScore = new ArrayList<>();
+        for (Student student:studentList) {
+            sortByAvgScore.add(student);
+        }
+        this.studentList = sortByAvgScore;
+    }
 
 
 }
