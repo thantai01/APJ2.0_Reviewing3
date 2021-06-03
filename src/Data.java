@@ -30,6 +30,7 @@ public class Data {
         bfw.close();
         fw.close();
     }
+
     static List<Student> readDataFile(String path) throws IOException {
         FileReader fr = new FileReader(path);
         BufferedReader br = new BufferedReader(fr);
@@ -42,10 +43,10 @@ public class Data {
                         (genderBuilder(line[4])),
                         line[5],line[6],
                         (Double.parseDouble(line[7]))));
-
         }
         return  newList;
     }
+
     static int genderBuilder(String input) {
         if(input.equals("Male")) {
             return 0;

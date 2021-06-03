@@ -79,9 +79,11 @@ public class StudentManager implements Manager<Student>{
         }
     }
 
-//    public void findByAgeRange(int age) {
-//
-//    }
+    public void findByAgeRange(int age) {
+        for(Student student: studentList) {
+
+        }
+    }
     public void sortByID() {
         Collections.sort(studentList, new Comparator<Student>() {
             @Override

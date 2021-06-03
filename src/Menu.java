@@ -15,7 +15,10 @@ public class Menu {
         System.out.println("4. Delete Student (By ID): ");
         System.out.println("5. Find Student: ");
         System.out.println("6. Sort Student List: ");
-        System.out.println("7. Exit. ");
+        System.out.println("7. Export Student List: ");
+        System.out.println("8. Import Student List: ");
+        System.out.println("9. Exit. ");
+        System.out.println("What is your choice?: ");
     }
 
     static void addStudent(StudentManager studentManager) {
@@ -41,12 +44,14 @@ public class Menu {
         double avg =sc.nextDouble();
         studentManager.add(new Student(id,name,dob,gender,address,email,avg));
     }
+
     static void deleteByID(StudentManager studentManager) {
         System.out.print("Enter a product ID want to delete: ");
         Scanner sc = new Scanner(System.in);
         String id = sc.nextLine();
         studentManager.delete(id);
     }
+
     static Student newStudent (String id) {
         System.out.println("Update Student Information :");
         Scanner sc = new Scanner(System.in);
