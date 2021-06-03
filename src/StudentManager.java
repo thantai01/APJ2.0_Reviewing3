@@ -73,8 +73,8 @@ public class StudentManager implements Manager<Student>{
         for(Student student:studentList) {
             if(student.getStudentAvgScore()>=min && student.getStudentAvgScore()<=max) {
                 System.out.println(student + "\n");
-            } else {
-                System.out.println("No result!");
+            } else if (student.getStudentAvgScore()<min || student.getStudentAvgScore()>max){
+                System.out.println("No result");
             }
         }
     }

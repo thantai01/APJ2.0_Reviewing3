@@ -48,7 +48,7 @@ public class Menu {
         studentManager.delete(id);
     }
     static Student newStudent () {
-        System.out.flush();
+        System.out.println("Update Student Information :");
         Scanner sc = new Scanner(System.in);
         System.out.print("New Student ID: ");
         String id = sc.nextLine();
@@ -67,6 +67,71 @@ public class Menu {
         System.out.println("New Student Avg Score: ");
         double avg = sc.nextDouble();
         return new Student(id,name,dob,gender,address,email,avg) ;
+    }
+
+    static void findMenu(StudentManager studentManager) {
+        System.out.println("5.1 Find by Student ID: ");
+        System.out.println("5.2 Find by Student Gender: ");
+        System.out.println("5.3 Find by Student Address: ");
+        System.out.println("5.4 Find by Student Avg Score: ");
+        System.out.println("5.5 Find by Student Age: ");
+        Scanner sc=  new Scanner(System.in);
+        int select = sc.nextInt();
+        switch (select) {
+            case 1:
+                System.out.println("Enter Student ID: ");
+                sc.nextLine();
+                String id = sc.nextLine();
+                System.out.println("#Result: ");
+                studentManager.findByID(id);
+                break;
+            case 2:
+                System.out.println("Enter Student Gender (0. Male;1. Female): ");
+                int gender = sc.nextInt();
+                System.out.println("#Result: ");
+                studentManager.findByGender(gender);
+                break;
+            case 3:
+                System.out.println("Enter Student Address: ");
+                String address = sc.nextLine();
+                System.out.println("#Result: ");
+                studentManager.findByAddress(address);
+                break;
+            case 4:
+                System.out.println("Enter a min score: ");
+                double min = sc.nextDouble();
+                System.out.println("Enter a max score: ");
+                double max = sc.nextDouble();
+                System.out.println("#Result: ");
+                studentManager.findByAvgScore(min,max);
+                break;
+//            case 5:
+//                System.out.println();
+//                break;
+            default:
+                System.out.println("Invalid");;
+        }
+    }
+
+    static void sortMenu(StudentManager studentManager) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("6.1: Sort by Student ID: ");
+        System.out.println("6.2: Sort by Student Name: ");
+        System.out.println("6.3: Sort by Student Age: ");
+        System.out.println("6.4: Sort by Student Avg Score: ");
+        int select = sc.nextInt();
+        switch (select) {
+            case 1:
+                studentManager.sortByID();
+                studentManager.print();
+                break;
+            case 2:
+                studentManager.sortByName();
+                studentManager.print();
+                break;
+            case 3:
+
+        }
     }
 
 }
