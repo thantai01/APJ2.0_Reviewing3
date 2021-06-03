@@ -48,8 +48,6 @@ public class Menu {
     static Student newStudent (String id) {
         System.out.println("Update Student Information :");
         Scanner sc = new Scanner(System.in);
-//        System.out.print("New Student ID: ");
-//        String id = sc.nextLine();
         System.out.print("New Student Name: ");
         String name = sc.nextLine();
         System.out.print("New Student DOB: ");
@@ -112,7 +110,7 @@ public class Menu {
                 studentManager.findByAgeRange(minAge,maxAge);
                 break;
             default:
-                System.out.println("Invalid");;
+                System.out.println("Invalid");
         }
     }
 
