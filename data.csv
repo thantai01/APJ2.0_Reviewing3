@@ -1,0 +1,4 @@
+ID,name,dob,age,gender,address,email,avg score
+0001,A,01-09-1993,28,Male,HN,A@gmail.com,7.0,
+0002,B,02-09-1995,26,Male,HN,B@gmail.com,6.0,
+0003,C,03-09-1991,30,Female,HN,C@gmail.com,6.5,
